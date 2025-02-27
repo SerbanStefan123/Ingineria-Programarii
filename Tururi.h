@@ -2,6 +2,11 @@
 #include "Participant.h"
 #include "GhidTur.h"
 #include "Participant.h"
+struct Nod
+{
+	string locatie;
+	Nod* next;
+};
 
 class Tururi
 {
@@ -10,8 +15,13 @@ private:
 	GhidTur Ghid;
 	Participant listaParticipanti[5];
 	int nrParticipanti;
+	Nod* itinerariu;
 public:
-	Tururi(GhidTur Ghid,Participant listaP[5],bool tip);
+	Tururi(bool tip);
+	addGhid(GhidTur ghidd);
+	addPartipanti(string nume, string prenume);
+	addLocatie(string locatie);
+	printTur();
 	~Tururi();
 };
 
